@@ -1,0 +1,163 @@
+.dock {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 0.2rem 0.5rem 0 0.5rem;
+    bottom: 3%;
+    left: 50%;
+    height: 70px;
+    transform: translateX(-50%);
+    backdrop-filter: blur(20px);
+    border: 1px solid #ffffff33;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.555);
+    z-index: 10;
+}
+.icon_wrapper{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dock .icon_wrapper .point {
+    margin: 0 auto;
+    position: fixed;
+    bottom: 4px;
+    width: 4px;
+    height: 4px;
+    background-color: #c4c4c4;
+    border-radius: 100%;
+    opacity: 0;
+}
+.dock .point.show {
+    opacity: 1;
+}
+
+
+.dock .icon {
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+    /* transform: translate3d(0px, 0%, 0px); */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dock .icon::after {
+    font-size: 15px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.39);
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -100%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 95px;
+    height: 25px;
+    padding: 4px 3px 10px;
+    border-radius: 8px;
+    font-family: "lexend", sans-serif;
+    font-weight: 700;
+    clip-path: polygon(
+      100% 0%,
+      100% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 80%,
+      43% 80%,
+      50% 101%,
+      57% 80%,
+      100% 80%,
+      100% 0%
+    );
+  }
+
+.dock .icon:nth-child(1):hover::after {content: "Finder";}
+.dock .icon:nth-child(2):hover::after {content: "Settings";}
+.dock .icon:nth-child(3):hover::after {content: "Amazon";}
+.dock .icon:nth-child(4):hover::after {content: "CCMB";}
+.dock .icon:nth-child(5):hover::after {content: "Brown";}
+.dock .icon:nth-child(6):hover::after {content: "Insitro";}
+.dock .icon:nth-child(7):hover::after {content: "Harvard";}
+.dock .icon:nth-child(8):hover::after {content: "UC Davis";}
+.dock .icon:nth-child(9):hover::after {content: "Linkedin";}
+.dock .icon:nth-child(11):hover::after {content: "Trash";}
+
+.dock .icon img {
+height: 3.6rem;
+transition: 0.2s;
+transform: translateY(-2.5px);
+}
+
+.dock .icon:hover img {
+    cursor: pointer;
+    margin: 0 0 40px 0;
+    height: 5rem;
+}
+.dock .icon:hover + .icon img {
+    height: 4rem;
+    margin: 0 0 25px 0;
+}
+
+.dock .icon img:active {
+filter: brightness(0.6) drop-shadow(0 0 10px #2c2c2c);
+}
+
+.icon_img{
+    width: 100px;
+    height: 100px;
+}
+
+.icon.app_bounce {
+    animation: icon_bounce .5s ease-in-out;
+}
+
+@keyframes icon_bounce {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-30px);
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+.felx-evenly{
+display: flex;
+justify-content: space-evenly;
+}
+
+.dock-icons{
+margin: 0 .7vw 0 .7vw;
+height: 4vw;
+}
+
+.vert-line{
+width: 1px;
+height: 80%;
+background-color: #787878;
+margin: 0 .5vw 0 .5vw;
+}
+
+.current_app{
+font-size: 14px;
+font-weight:bolder;
+height: 15px;
+margin: 0 10px 0 0 ;
+position: relative;
+top: 50%;
+font-weight: bold;
+cursor: pointer;
+transform: translateY(-50%);
+}

@@ -1,0 +1,362 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    background-color: #5c5c5ca2;
+    backdrop-filter: blur(1rem);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left{
+    height: 30px;
+    width: 20%;
+    display: flex;
+    justify-content: left;
+}
+
+.nav-right{
+    height: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: right;
+}
+
+.clock{
+    font-size: 14px;
+    font-weight: bold;
+    height: 15px;
+    margin: 0 15px 0 15px;
+    position: relative;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.nav_icons {
+    height: 15px;
+    width: auto;
+    margin: 0 .5vw 0 .5vw;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* ========== Apple ===================== */
+#apple{
+    cursor: pointer;
+    transition: all ease-out;
+}
+
+.apple_dropdown{
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 32px;
+    left: 2px;
+    width: 120px;
+    height: auto;
+    padding: 5px;
+    background: #353434b8;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+}
+.apple_nav_open{
+    display: block; 
+    animation: apple_fadein 1s normal forwards;
+}
+
+.apple_nav_close{
+    display: block;
+    animation: apple_fadeout 1s normal forwards;
+}
+
+@keyframes apple_fadein {
+    0% {
+        left: 2px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes apple_fadeout {
+    0% {
+        opacity: 1; 
+    }
+    90% {
+        opacity: 0; 
+        left: 2px;
+    }
+    100% {
+        opacity: 0;
+        left: -200px;
+    }
+}
+
+.apple_dropdown h3{
+font-size: 16px;
+font-weight: 600;
+margin: 0;
+}
+.apple_dropdown p{
+font-size: 14px;
+margin: 2px;
+}
+
+.apple_dropdown button {
+padding: 4px 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-radius: 4px;
+color: white;
+width: 100%;
+cursor: pointer;
+user-select: none;
+}
+.apple_dropdown.a:link{ 
+text-decoration: none; 
+color: #ffffff; 
+}
+
+.apple_dropdown button:hover {
+background-color: #007ff7;
+}
+.apple_dropdown button:active {
+background-color: #0063f7;
+}
+/* =========== Battery ================= */
+.battery_dropdown{
+opacity: 0;
+display: none;
+position: fixed;
+top: 32px;
+right: 200px;
+width: 150px;
+height: auto;
+padding: 5px;
+background: #353434b8;
+border: 1px solid #ffffff33;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+border-radius: 5px;
+backdrop-filter: blur(10px);
+transition: opacity 0.5s ease-in-out;
+}
+
+.battery_nav_open{
+    display: block; 
+    animation: battery_fadein 1s normal forwards;
+}
+
+.battery_nav_close{
+    display: block;
+    animation: battery_fadeout 1s normal forwards;
+}
+
+@keyframes battery_fadein {
+    0% {
+        right: 200px;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes battery_fadeout {
+    0% {
+        opacity: 1; 
+    }
+    90% {
+        opacity: 0; 
+        right: 200px;
+    }
+    100% {
+        opacity: 0;
+        right: -200px;
+    }
+}
+
+.battery_dropdown header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 5px;
+}
+
+.battery_dropdown header h3 {
+font-size: 16px;
+font-weight: 600;
+margin: 0;
+}
+
+.battery_dropdown header span {
+opacity: 0.75;
+font-size: 12px;
+}
+
+.battery_dropdown p {
+font-size: 9px;
+margin-top: 4px;
+padding: 0 5px;
+}
+
+.battery {
+margin: 0;
+display: flex;
+cursor: pointer;
+user-select: none;
+position: relative;
+border-radius: 4px;
+align-items: center;
+padding: 0.3rem 0.5rem;
+background: transparent;
+}
+
+.battery_container {
+width: 22px;
+height: 10px;
+padding: 1px;
+border-radius: 3px;
+position: relative;
+border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.battery_container::after {
+position: absolute;
+content: "";
+background: rgba(255, 255, 255, 0.4);
+width: 3px;
+height: 7px;
+top: 50%;
+right: -5px;
+transform: translateY(-50%);
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
+}
+
+.battery_progress {
+display: fixed;
+height: 100%;
+display: flex;
+background: white;
+border-radius: 2px;
+}
+
+.low_battery{
+background: #ff0000b3;
+}
+
+.high_battery{
+background: #11dd4e;
+}
+
+.is-charging {
+display: none;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 1; 
+height: 15px;
+}
+
+.is-charging-visibel {
+display: block !important;
+}
+
+.battery_text {
+font-size: 12px;
+margin-right: 4px;
+}
+
+.hr {
+border: 0;
+border-top: 1px solid #ffffff33;
+}
+
+/* ======================= Widgets ============================ */
+.widgets-panel {
+position: fixed;
+top: 32px;
+right: 10px;
+transform: translateX(115%);
+transition: all 0.3s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+backdrop-filter: blur(1rem);
+border: 1px solid #ffffff33;
+border-radius: 8px;
+overflow: hidden;
+}
+.widgets-panel.open {
+transform: translateX(0);
+}
+.widgets-panel-calendar {
+background: #353434c2;
+padding: 5px;
+width: 175px;
+}
+.widgets-panel #widget_items {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.widgets-panel-calendar h4 {
+color: #ffffff;
+font-size: 1rem;
+font-weight: 500;
+text-transform: uppercase;
+margin-left: 8px;
+margin-bottom: -10px;
+}
+.widgets-panel-calendar h2 {
+color: #ffffff;
+font-size: 2rem;
+font-weight: 300;
+margin: 1vw 0 1vw 0;
+}
+.widgets-panel-calendar p{
+margin: 0;
+}
+.widgets-panel-calendar div {
+position: relative;
+padding: 4px 10px;
+font-size: 1rem;
+border-radius: 4px;
+margin: 8px 8px 8px 20px;
+display: block;
+}
+.widgets-panel-calendar div::before {
+content: "";
+width: 8px;
+height: calc(100% - 2px);
+position: absolute;
+border-radius: 99px;
+top: 2px;
+left: -12px;
+}
+.widgets-panel-calendar .blue {
+color: #34aadc;
+background: #283646;
+}
+.widgets-panel-calendar .blue::before {
+background: #34aadc;
+}
+.widgets-panel-calendar .green {
+color: #32d74b;
+background: #2d402e;
+}
+.widgets-panel-calendar .green::before {
+background: #32d74b;
+}
+.widgets-panel-calendar .purple {
+color: #9c5ffd;
+background: #422948;
+}
+.widgets-panel-calendar .purple::before {
+background: #7a3edb;
+}

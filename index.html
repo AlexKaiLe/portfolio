@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="stylesheet" href="loading.css"/>
+  <link rel="stylesheet" href="dock.css"/>
+  <link rel="stylesheet" href="navbar.css"/>
+  <link rel="stylesheet" href="app.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body onload="getDate(), calculateBattery()">
+    <div class="loading-format">
+        <div class="flex-center">
+            <img class="apple-img" src="images/apple_logo.png"> 
+        </div>
+        <div class="progress">
+            <div class="progress-value"></div>
+        </div>
+    </div>
+
+    <div id = "background" class="loading-background">
+
+        <div id = "blur" class="blur-box">
+            <div class="profile">
+                <img class="profile-img" src="images/profile.jpg"> 
+            </div>
+            <div class="flex-center">
+                <p class="intro-p">Alexander Le's Portfolio</p>
+            </div>
+            <div class="flex-center">
+                <div class="password-box">
+                    <p class="password-p">&#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044; &#11044;</p>
+                    <button id="change-button" onclick="openPortfolio()" class="password-arrow">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-arrow-right fa-stack-1x"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-center">
+                <p class="description-p">Login and click settings to begin</p>
+            </div>
+        </div>
+
+        <div>
+            <div id = "navbar" class="navbar">
+
+                <div class="nav-left">
+                    <img id = "apple" class="nav_icons" src="images/apple_logo.png">
+                    <p class="current_app"></p>
+                </div>
+                <div class="nav-right">
+                    <img class="nav_icons" src="images/bluetooth.png">
+                    <img class="nav_icons" src="images/wifi.png">
+                    <img class="nav_icons" src="images/search.png">
+                    <img class="nav_icons" src="images/control.png">
+                    <img class="nav_icons" src="images/siri.png">
+                    <div id = "battery" class="battery">
+                        <span class="battery_text"></span>
+                        <div class="battery_container">
+                            <img class="is-charging" src="images/charging.png" alt="Battery is charging">
+                            <div class="battery_progress"></div>
+                        </div>
+                    </div>
+                    <div class="clock">
+                        <span id="date"></span>
+                        <span id="clock"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Folders -->
+            <div id="folders" class="folders static-page">
+                <a href="#0">
+                    <button id="Resume" class="folder" onclick="openCloseApp(this.id, 'folder');">
+                        <div id="Resume_folder" class="folder_box">
+                            <img class="folder_img" src="images/resume.png"> 
+                        </div>
+                        <div id="Resume_text" class="text_box">
+                            <h1 class="folder_txt">Resume</h1>
+                        </div>
+                    </button>
+                </a>
+                <a href="#0">
+                    <button id="Projects" class="folder" onclick="openCloseApp(this.id, 'folder');">
+                        <div id="Projects_folder" class="folder_box">
+                            <img class="folder_img" src="images/folder.png"> 
+                        </div>
+                        <div id="Projects_text" class="text_box">
+                            <h1 class="folder_txt">Projects</h1>
+                        </div>
+                    </button>
+                </a>
+                <a href="#0">
+                    <button id="Artwork" class="folder" onclick="openCloseApp(this.id, 'folder');">
+                        <div id="Artwork_folder" class="folder_box">
+                            <img class="folder_img" src="images/folder.png"> 
+                        </div>
+                        <div id="Artwork_text" class="text_box">
+                            <h1 class="folder_txt">Artwork</h1>
+                        </div>
+                    </button>
+                </a>
+                <a href="#0">
+                    <button id="Coursework" class="folder" onclick="openCloseApp(this.id, 'folder');">
+                        <div id="Coursework_folder" class="folder_box">
+                            <img class="folder_img" src="images/folder.png"> 
+                        </div>
+                        <div id="Coursework_text" class="text_box">
+                            <h1 class="folder_txt">Coursework</h1>
+                        </div>
+                    </button>
+                </a>
+                <a href="#0">
+                    <button id="Interests" class="folder" onclick="openCloseApp(this.id, 'folder');">
+                        <div id="Interests_folder" class="folder_box">
+                            <img class="folder_img" src="images/folder.png"> 
+                        </div>
+                        <div id="Interests_text" class="text_box">
+                            <h1 class="folder_txt">Interests</h1>
+                        </div>
+                    </button>
+                </a>
+                
+            </div>
+
+            <!-- Desktop Apps -->
+            <div id="page" class="flex-center static-page dock">
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/finder.png"/>
+                        </button>
+                        <div id = "Finder_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Settings" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/settings.png"/>
+                        </button>
+                        <div id = "Settings_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Amazon" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/amazon.png"/>
+                        </button>
+                        <div id = "Amazon_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="CCMB" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/CCMB.png"/>
+                        </button>
+                        <div id = "CCMB_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Brown" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/brown.png"/>
+                        </button>
+                        <div id = "Brown_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Insitro" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/insitro.png"/>
+                        </button>
+                        <div id = "Insitro_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Harvard" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/harvard.png"/>
+                        </button>
+                        <div id = "Harvard_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="UC Davis" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/davis.png"/>
+                        </button>
+                        <div id = "UC Davis_point" class="point"></div>
+                    </div>
+                </a>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Linkedin" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/linkedin.png"/>
+                        </button>
+                        <div id = "Linkedin_point" class="point"></div>
+                    </div>
+                </a>
+                <div class="vert-line"></div>
+                <a href="#0">
+                    <div class="icon_wrapper">
+                        <button id ="Trash" class="icon" onclick="openCloseApp(this.id, 'app');">
+                            <img src="images/trash.png"/>
+                        </button>
+                        <div id = "Trash_point" class="point"></div>
+                    </div>   
+                </a>
+            </div>
+
+            <div id="Resume_app" class="app">
+                <div id ="Resume_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Resume','folder')"></button>
+                            <button onclick="shrinkApp('Resume_app')"></button>
+                            <button onclick="expandApp('Resume_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Resume
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Projects_app" class="app">
+                <div id ="Projects_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Projects','folder')"></button>
+                            <button onclick="shrinkApp('Projects_app')"></button>
+                            <button onclick="expandApp('Projects_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Projects
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Artwork_app" class="app">
+                <div id ="Artwork_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Artwork','folder')"></button>
+                            <button onclick="shrinkApp('Artwork_app')"></button>
+                            <button onclick="expandApp('Artwork_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Artwork
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Coursework_app" class="app">
+                <div id ="Coursework_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Coursework','folder')"></button>
+                            <button onclick="shrinkApp('Coursework_app')"></button>
+                            <button onclick="expandApp('Coursework_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Coursework
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Interests_app" class="app">
+                <div id ="Interests_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Interests','folder')"></button>
+                            <button onclick="shrinkApp('Interests_app')"></button>
+                            <button onclick="expandApp('Interests_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Interests
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Finder_app" class="app">
+                <div id ="Finder_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Finder','app')"></button>
+                            <button onclick="shrinkApp('Finder_app')"></button>
+                            <button onclick="expandApp('Finder_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Finder
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Settings_app" class="app">
+                <div id ="Settings_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Settings','app')"></button>
+                            <button onclick="shrinkApp('Settings_app')"></button>
+                            <button onclick="expandApp('Settings_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Settings
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div id="Amazon_app" class="app">
+                <div id ="Amazon_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Amazon','app')"></button>
+                            <button onclick="shrinkApp('Amazon_app')"></button>
+                            <button onclick="expandApp('Amazon_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Amazon
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="CCMB_app" class="app">
+                <div id ="CCMB_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('CCMB','app')"></button>
+                            <button onclick="shrinkApp('CCMB_app')"></button>
+                            <button onclick="expandApp('CCMB_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            CCMB
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Brown_app" class="app">
+                <div id ="Brown_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Brown','app')"></button>
+                            <button onclick="shrinkApp('Browne_app')"></button>
+                            <button onclick="expandApp('Brown_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Brown
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Insitro_app" class="app">
+                <div id ="Insitro_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Insitro','app')"></button>
+                            <button onclick="shrinkApp('Insitro_app')"></button>
+                            <button onclick="expandApp('Insitro_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Insitro
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Harvard_app" class="app">
+                <div id ="Harvard_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Harvard','app')"></button>
+                            <button onclick="shrinkApp('Harvard_app')"></button>
+                            <button onclick="expandApp('Harvard_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Harvard
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="UC Davis_app" class="app">
+                <div id ="UC Davis_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('UC Davis','app')"></button>
+                            <button onclick="shrinkApp('UC Davis_app')"></button>
+                            <button onclick="expandApp('UC Davis_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            UC Davis
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Linkedin_app" class="app">
+                <div id ="Linkedin_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Linkedin','app')"></button>
+                            <button onclick="shrinkApp('Linkedin_app')"></button>
+                            <button onclick="expandApp('Linkedin_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Linkedin
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Trash_app" class="app">
+                <div id ="Trash_app_header" class="app_header">
+                    <div class="flex-left">
+                        <div class="taskbar">
+                            <button onclick="openCloseApp('Trash','app')"></button>
+                            <button onclick="shrinkApp('Trash_app')"></button>
+                            <button onclick="expandApp('Trash_app')"></button>
+                        </div>
+                        <div class="title-center">
+                            Trash
+                        </div>
+                    </div>
+                </div>
+                <div class="app_main">
+                    <div style="position: relative;">
+                        <div class="side_nav">
+                            <h1>Favorites</h1>
+                            <a href="#0"> Nav_0</a>
+                            <a href="#1"> Nav_1</a>
+                            <a href="#2"> Nav_2</a>
+                            <a href="#3"> Nav_3</a>
+                            <a href="#4"> Nav_4</a>
+                        </div>
+                        <div class="right_box">
+                            <div id = "0" class="app_text_box">
+                                <h1>WELCOME</h1>
+                                <p>To Alex Le's Portfolio</p>
+                            </div>
+                            <div id = "1" class="app_title fade_top">
+                                <img src="images/profile.jpg">
+                                <h1> FADE TOP</h1>
+                            </div>
+                            <div id = "2" class="app_title fade_bottom">
+                                <img src="images/profile.jpg">
+                                <h1> FADE BOTTOM</h1>
+                            </div>
+                            <div id = "3" class="app_title fade_left">
+                                <img src="images/profile.jpg">
+                                <h1> Fade Left</h1>
+                            </div>
+                            <div id = "4" class="app_title fade_right">
+                                <img src="images/profile.jpg">
+                                <h1> FADE RIGHT</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="apple_dropdown">
+        <button><a href="https://github.com/AlexKaiLe" target="_blank">About This Mac</a></button>
+        <hr class="hr">
+        <button onClick="window.location.reload();">Restart...</button>
+    </section>
+
+    <section class="battery_dropdown">
+        <header><h3 class="dropdown_h3">Battery</h3> <span id = "battery_popup_text" class="battery_text"></span></header>
+                          
+        <p>Power Source: <span class="power_source"></span></p>
+        <hr class="hr">
+        <p>No Apps Using Significant Energy</p>
+    </section>
+
+    <section class="widgets-panel">
+        <div class="widgets-panel-calendar">
+          <div id="widget_items">
+            <h2 id="date_num"></h2>
+            <h4 id="date_day"></h4>
+          </div>
+          <div class="blue">
+            <p>Stand-up Meeting</p>
+            <p>10:00 - 11:00 AM</p>
+          </div>
+          <div class="green">
+            <p>Focus Time</p>
+            <p>1:00 - 3:00 PM</p>
+          </div>
+          <div class="purple">
+            <p>Workout/Run</p>
+            <p>5:30 - 7:00 PM</p>
+          </div>
+        </div>
+      </section>
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

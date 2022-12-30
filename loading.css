@@ -1,0 +1,201 @@
+.loading-background{
+background: #000000;
+height: 100vh;
+animation: background-img var(--load_time) normal forwards;
+overflow: "hidden";
+user-select: none;
+overscroll-behavior-y: contain;
+}
+
+.apple-img{
+width: 10vw;
+margin-bottom: 3vw;
+animation: fadeout var(--load_time) normal forwards;
+}
+
+.loading-format{
+margin: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+}
+
+.progress {
+background: rgba(255,255,255,0.1);
+justify-content: flex-start;
+border-radius: 100px;
+align-items: center;
+position: relative;
+padding: 0 5px;
+display: flex;
+height: 10px;
+width: 500px;
+animation: fadeout var(--load_time) normal forwards;
+}
+
+.progress-value {
+animation: load var(--load_time) normal forwards;
+box-shadow: 0 10px 40px -10px #fff;
+border-radius: 100px;
+background: #fff;
+height: 5px;
+width: 0;
+}
+
+.blur-box{
+background-color: #696969a3;
+width: 100%;
+height: 100%;
+backdrop-filter: blur(2px);
+animation: fadein var(--login_time) normal forwards;
+}
+
+.profile{
+margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+vertical-align: middle;
+padding-top: 20vh;
+}
+
+.intro-p{
+margin-top: 5vh;
+font-size: 1.2rem;
+}
+.password-p{
+vertical-align: middle;
+margin-left: 10px;
+margin-right: 10px;
+font-size: 10px;
+}
+
+.password-arrow{
+    cursor: pointer;
+    vertical-align: middle;
+    margin: auto;
+    margin-right: 0;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background-color: #ffffff00;
+}
+
+.profile-img{
+    width: 20vh;
+    border-radius: 100%;
+}
+
+.password-box{
+    width: 300px;
+    height: 35px;
+    border-radius: 20vw;
+    background-color: #ebebeb9b;
+    backdrop-filter: blur(100px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-p{
+position: absolute;
+bottom: 5px;
+}
+
+@keyframes load {
+0% {
+    width: 0%; 
+    opacity: 1;
+}
+80% {
+    width: 100%;
+    opacity: 1;
+}
+100% {
+    width: 100%;
+    opacity: 0;
+    visibility: hidden; 
+    display: None
+}
+}
+
+@keyframes fadeout {
+0% {
+    width: 100; 
+    opacity: 1;
+}
+80% {
+    width: 100;
+    opacity: 1;
+}
+100% {
+    width: 100;
+    opacity: 0;
+    visibility: hidden; 
+    display: None
+}
+}
+
+@keyframes fadein {
+0% {
+    opacity: 0;
+    visibility: hidden; 
+    display: None
+}
+80% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes static-img {
+0% {
+    opacity: 1;
+}
+90% {
+    height: 100%;
+    opacity: 0;
+    visibility: hidden; 
+    display: none;
+}
+100% {
+    height: 0;
+    opacity: 0;
+    visibility: hidden; 
+    display: none;
+}
+}
+
+@keyframes background-img {
+0% {
+    background-color: #000000;
+    opacity: 0;
+}
+90% {
+    background-color: #000000;
+    background-image: None;
+}
+95% {
+    background-color: None;
+    width: 100;
+    background-image: url("images/yosemite.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 0;
+}
+100% {
+    width: 100;
+    background-image: url("images/yosemite.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 1;
+    background-attachment: fixed;
+}
+}
