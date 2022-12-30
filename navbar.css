@@ -281,7 +281,7 @@ border-top: 1px solid #ffffff33;
 }
 
 /* ======================= Widgets ============================ */
-.widgets-panel {
+.widgets_panel {
 position: fixed;
 top: 32px;
 right: 10px;
@@ -292,20 +292,20 @@ border: 1px solid #ffffff33;
 border-radius: 8px;
 overflow: hidden;
 }
-.widgets-panel.open {
+.widgets_panel.open {
 transform: translateX(0);
 }
-.widgets-panel-calendar {
+.widgets_panel-calendar {
 background: #353434c2;
 padding: 5px;
 width: 175px;
 }
-.widgets-panel #widget_items {
+.widgets_panel #widget_items {
 display: flex;
 align-items: center;
 justify-content: center;
 }
-.widgets-panel-calendar h4 {
+.widgets_panel-calendar h4 {
 color: #ffffff;
 font-size: 1rem;
 font-weight: 500;
@@ -313,16 +313,16 @@ text-transform: uppercase;
 margin-left: 8px;
 margin-bottom: -10px;
 }
-.widgets-panel-calendar h2 {
+.widgets_panel-calendar h2 {
 color: #ffffff;
 font-size: 2rem;
 font-weight: 300;
 margin: 1vw 0 1vw 0;
 }
-.widgets-panel-calendar p{
+.widgets_panel-calendar p{
 margin: 0;
 }
-.widgets-panel-calendar div {
+.widgets_panel-calendar div {
 position: relative;
 padding: 4px 10px;
 font-size: 1rem;
@@ -330,7 +330,7 @@ border-radius: 4px;
 margin: 8px 8px 8px 20px;
 display: block;
 }
-.widgets-panel-calendar div::before {
+.widgets_panel-calendar div::before {
 content: "";
 width: 8px;
 height: calc(100% - 2px);
@@ -339,24 +339,24 @@ border-radius: 99px;
 top: 2px;
 left: -12px;
 }
-.widgets-panel-calendar .blue {
+.widgets_panel-calendar .blue {
 color: #34aadc;
 background: #283646;
 }
-.widgets-panel-calendar .blue::before {
+.widgets_panel-calendar .blue::before {
 background: #34aadc;
 }
-.widgets-panel-calendar .green {
+.widgets_panel-calendar .green {
 color: #32d74b;
 background: #2d402e;
 }
-.widgets-panel-calendar .green::before {
+.widgets_panel-calendar .green::before {
 background: #32d74b;
 }
-.widgets-panel-calendar .purple {
+.widgets_panel-calendar .purple {
 color: #9c5ffd;
 background: #422948;
 }
-.widgets-panel-calendar .purple::before {
+.widgets_panel-calendar .purple::before {
 background: #7a3edb;
 }

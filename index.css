@@ -1,10 +1,10 @@
 :root {
   /* --load_time: 5s;
   --login_time: 6s; */
-  --load_time: 1s;
-  --login_time: 1s;
-  /* --load_time: 0s;
-  --login_time: 0s; */
+  /* --load_time: 1s;
+  --login_time: 1s; */
+  --load_time: 0s;
+  --login_time: 0s;
 }
 html {
   scroll-behavior: smooth;
@@ -64,24 +64,46 @@ a:hover {color:#ffffff;text-decoration:none;}
 /* ============================= */
 
 .app_title{
+  color: #000000;
+  text-shadow: 1px 1px 2px #ffffff;
   padding: 5vw 0;
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
-  text-align: center;
   align-items: center;
 }
 .app_title img{
   width: 20%;
-  height: 10;
+  height: 20%;
   border-radius: 10px;
+  margin: 0 0 0 5vw;
+}
+.app_title div{
+  flex: 1;
   margin: 0 5vw;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  align-items: left;
+  word-wrap: break-word;
 }
-
 .app_title h1{
-  font-size: 3rem;
+  font-size: 4rem;
+  margin: 0;
 }
 
+.curser{
+  width: 20px;
+  height: 20px;
+}
+/* 
+.fixed-img {
+  background-image: url("images/bofax.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+/* ====== */
 .side_nav{
   display: flex;
   flex-direction: column;

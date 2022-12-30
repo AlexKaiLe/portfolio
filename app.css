@@ -67,6 +67,7 @@
     min-height: 32px;
     resize: both;
     overflow: hidden;
+    overflow-x: hidden;
   }
   
   .app.open{
@@ -91,6 +92,7 @@
     max-height: calc(100% - 32px);
     overflow: scroll;
     overscroll-behavior: none;
+    overflow-x: hidden;
   }
   .wrapper{
     position: fixed;

@@ -71,7 +71,7 @@ const getDate = () => {
     }
 
     document.querySelector(".clock").addEventListener("click", () => {
-        document.querySelector(".widgets-panel").classList.toggle("open");
+        document.querySelector(".widgets_panel").classList.toggle("open");
     });
     
     document.getElementById("date").innerHTML = date.toDateString();
