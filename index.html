@@ -137,87 +137,46 @@
     </section>
     <!-- Desktop Apps -->
     <section id="page" class="flex-center static-page dock">
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/finder.png" />
-                </button>
+
+        <!-- <div class="icon_wrapper">
+            <button id="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/finder.png" />
                 <div id="Finder_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Settings" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/settings.png" />
-                </button>
-                <div id="Settings_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Amazon" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/amazon.png" />
-                </button>
-                <div id="Amazon_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="CCMB" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/CCMB.png" />
-                </button>
-                <div id="CCMB_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Brown" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/brown.png" />
-                </button>
-                <div id="Brown_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Insitro" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/insitro.png" />
-                </button>
-                <div id="Insitro_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Harvard" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/harvard.png" />
-                </button>
-                <div id="Harvard_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="UC Davis" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/davis.png" />
-                </button>
-                <div id="UC Davis_point" class="point"></div>
-            </div>
-        </a>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Linkedin" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/linkedin.png" />
-                </button>
-                <div id="Linkedin_point" class="point"></div>
-            </div>
-        </a>
+            </button>
+        </div> -->
+        <button id="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/finder.png" />
+        </button>
+        <button id="Settings" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <a href="#settings_header">
+                <img src="images/settings.png" />
+            </a>
+        </button>
+        <button id="Amazon" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/amazon.png" />
+        </button>
+        <button id="CCMB" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/CCMB.png" />
+        </button>
+        <button id="Brown" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/brown.png" />
+        </button>
+        <button id="Insitro" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/insitro.png" />
+        </button>
+        <button id="Harvard" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/harvard.png" />
+        </button>
+        <button id="UC Davis" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/davis.png" />
+        </button>
+        <button id="Linkedin" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/linkedin.png" />
+        </button>
         <div class="vert-line"></div>
-        <a href="#0">
-            <div class="icon_wrapper">
-                <button id="Trash" class="icon" onclick="openCloseApp(this.id, 'app');">
-                    <img src="images/trash.png" />
-                </button>
-                <div id="Trash_point" class="point"></div>
-            </div>
-        </a>
+        <button id="Trash" class="icon" onclick="openCloseApp(this.id, 'app');">
+            <img src="images/trash.png" />
+        </button>
     </section>
     <!-- App Pages -->
     <section>
@@ -532,55 +491,66 @@
                 <div style="position: relative;">
                     <div class="side_nav">
                         <h1>Favorites</h1>
-                        <a href="#0"> Nav_0</a>
-                        <a href="#1"> Nav_1</a>
-                        <a href="#2"> Nav_2</a>
-                        <a href="#3"> Nav_3</a>
-                        <a href="#4"> Nav_4</a>
+                        <a href="#settings_header">Header</a>
+                        <a href="#settings_about_me">About Me</a>
+                        <a href="#settings_navigation">Navigation</a>
+                        <a href="#settings_design">Design</a>
+                        <a href="#settings_indicators">Indicators</a>
                     </div>
                     <div class="right_box">
-                        <div class="app_title fade_top">
+                        <div id ="settings_header" class="app_title fade_top">
                             <img src="images/profile.jpg">
                             <div>
-                                <h1>ALEXANDER LE</h1>
-                                <h3>Brown University: Computational Biology</h3>
+                                <h1>ALEXANDER K. LE</h1>
+                                <h3>Computational Biology | Computer Science | Industrial Design</h3>
                                 <h3>Incoming Software Engineer at Amazon</h3>
                             </div>
                         </div>
-                        <div id="0" class="app_text_box">
-                            <h1 class="fade_left">About Me</h1>
-                            <h1 class="fade_left">Navigating My Portfolio</h1>
-                            <p class="fade_right">This website was designed with inspiration from the user interface and user interactions
-                                of the MacBook. You can navigate my portfolio in a similar way to a MacBook desktop,
-                                where you can interact with the navigation bar at the top, icons in the dock at the
-                                bottom, and folders on the desktop on the right.</p>
-                            <ul class="fade_right">
+                        <div id ="settings_about_me" class="app_text_box">
+                            <h2 class="fade_left">About Me</h2>
+                            <p>Hello! My name is Alex Le and I am an incoming software engineer at Amazon. I am curently
+                                a senior at Brown University, where I am studying Computational Biology with an emphasis
+                                on
+                                software engineering, deep learning, and molecular biology. My interests include
+                                software design and development, artificial intelligence, machine learning, computer
+                                vision, and natural language processing. I am passionate about using technology to solve
+                                problems and make a positive impact in the world. I am excited to bring my skills and
+                                interests to my career at Amazon and continue learning and growing as a software
+                                engineer.
+                            </p>
+                            <div class="flex-center">
+                                <a class="btn" href="https://github.com/AlexKaiLe"><i class="fa fa-github"></i></a>
+                                <a class="btn" href="https://www.linkedin.com/in/alexkaile/"><i
+                                        class="fa fa-linkedin"></i></a>
+                                <a class="btn" href="mailto: alexkaile@gmail.com"><i class="fa fa-envelope"></i></a>
+                            </div>
+                            <h1 id ="settings_navigation" class="fade_right">Navigating My Portfolio</h1>
+                            <div class="flex-center">
+                                <img class="paw_img" src="images/paws.png">
+                            </div>
+                            <h2 id ="settings_design" class="fade_left">Portfolio Design</h2>
+                            <p>This website was inspired by the UI/UX of MacBooks. The navigation of this portfolio is
+                                similar to how one would use the desktop on a MacBook. You can interact with the
+                                navigation bar at the top, the dock at the bottom, and folders on the right.</p>
+                            <ul>
                                 <li><b>Navbar:</b> Information about current state of your computer</li>
                                 <li><b>Dock:</b> Information about work and education experience</li>
                                 <li><b>Folder:</b> Information about personal projects and interests</li>
                             </ul>
+                            <h2 id ="settings_indicators" class="fade_left">Curser Indicators</h2>
                             <p>As you hover over different elements on the website, you may notice the cursor changing
                                 shape. This helps to provide visual cues for users as they interact with the website.
                             </p>
                             <ul>
-                                <li><img class="curser" src="images/arrow.png"></li>
-                                <li><img class="curser" src="images/pointer.png"></li>
-                                <li><img class="curser" src="images/cross.png"></li>
-                                <li><img class="curser" src="images/down_right.png"></li>
+                                <li><img class="curser" src="images/arrow.png"> <b>Arrow Curser:</b> Indicates mouse
+                                    location and indicates non interactive elements </li>
+                                <li><img class="curser" src="images/pointer.png"> <b>Pointer Curser:</b> Indicates a
+                                    clickable element</li>
+                                <li><img class="curser" src="images/cross.png"> <b>Move Curser:</b> Indicates a movable
+                                    element</li>
+                                <li><img class="curser" src="images/down_right.png"> <b>Down Right Curser:</b> Indicates
+                                    an expandable element </li>
                             </ul>
-                        </div>
-
-                        <div id="2" class="app_title fade_bottom">
-                            <img src="images/profile.jpg">
-                            <h1> FADE BOTTOM</h1>
-                        </div>
-                        <div id="3" class="app_title fade_left">
-                            <img src="images/profile.jpg">
-                            <h1> Fade Left</h1>
-                        </div>
-                        <div id="4" class="app_title fade_right">
-                            <img src="images/profile.jpg">
-                            <h1> FADE RIGHT</h1>
                         </div>
                     </div>
                 </div>

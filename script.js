@@ -12,6 +12,9 @@ const openPortfolio = () => {
     document.getElementById('page').classList.toggle('static-page-display')
     document.getElementById('navbar').classList.toggle('static-page-display')
     document.getElementById('folders').classList.toggle('static-page-display')
+    setTimeout(function() {
+      document.getElementById('Settings').dispatchEvent(new MouseEvent("click"));
+    }, 1500);
 }
 
 const calculateBattery = () => {
@@ -115,7 +118,7 @@ const openCloseApp = (id, folder_or_app) => {
     
     if (folder_or_app == "app"){
         document.getElementById(id).classList.toggle('app_bounce');
-        document.getElementById(id+"_point").classList.toggle('show')
+        // document.getElementById(id+"_point").classList.toggle('show')
     }
     else if (folder_or_app == "folder"){
         document.getElementById(id+"_folder").classList.toggle('folder_highlight')
@@ -125,7 +128,7 @@ const openCloseApp = (id, folder_or_app) => {
         if (app_list[i] != id) {
             document.getElementById(app_list[i]).classList.remove('app_bounce');
             document.getElementById(app_list[i]+"_app").classList.remove("open");
-            document.getElementById(app_list[i]+"_point").classList.remove('show');
+            // document.getElementById(app_list[i]+"_point").classList.remove('show');
         }
     }
     for (let i = 0; i < folder_list.length; i++) {

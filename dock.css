@@ -81,7 +81,8 @@
     );
   }
 
-/* .dock .icon:nth-child(1):hover::after {content: "Finder";}
+
+.dock .icon:nth-child(1):hover::after {content: "Finder";}
 .dock .icon:nth-child(2):hover::after {content: "Settings";}
 .dock .icon:nth-child(3):hover::after {content: "Amazon";}
 .dock .icon:nth-child(4):hover::after {content: "CCMB";}
@@ -91,7 +92,7 @@
 .dock .icon:nth-child(8):hover::after {content: "UC Davis";}
 .dock .icon:nth-child(9):hover::after {content: "Linkedin";}
 .dock .icon:nth-child(10):hover::after {content: "Linkedin";}
-.dock .icon:nth-child(11):hover::after {content: "Trash";} */
+.dock .icon:nth-child(11):hover::after {content: "Trash";}
 
 .dock .icon img {
 height: 3.6rem;

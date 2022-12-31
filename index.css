@@ -66,7 +66,7 @@ a:hover {color:#ffffff;text-decoration:none;}
 .app_title{
   color: #000000;
   text-shadow: 1px 1px 2px #ffffff;
-  padding: 5vw 0;
+  padding: 5vw 0 0 0;
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
@@ -94,6 +94,37 @@ a:hover {color:#ffffff;text-decoration:none;}
 .curser{
   width: 20px;
   height: 20px;
+  vertical-align: middle;
+}
+
+.btn {
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  padding: 1vw;
+  transition: color 0.15s ease-in-out;
+  background-color: #000000;
+  border: 2px solid #000000; 
+  border-radius: 100%;
+  display: inline-flex;
+  width: 1vw;
+  height: 1vw;
+  font-size: 2vw;
+  justify-content: center;
+  align-items: center; 
+  margin: 1vw; 
+}
+.btn:hover {
+  color: #000000;
+  background-color: #00000000;
+  border-color: #000000; 
+  text-decoration: none
+}
+
+.paw_img{
+  width: 100%;
 }
 /* 
 .fixed-img {
@@ -118,7 +149,7 @@ a:hover {color:#ffffff;text-decoration:none;}
   text-decoration: none;
   font-size: 16px;
   padding: .2vw 1vw;
-  margin: 0 1vw;
+  margin: .5vw 1vw;
   border-radius: 5px;
 }
 .side_nav a:hover{
@@ -141,6 +172,11 @@ a:hover {color:#ffffff;text-decoration:none;}
 
 .app_text_box{
   padding: 2vw 5vw;
+}
+.app_text_box h1{
+  text-align: center;
+  margin: 5vw 0 0 0;
+  font-size: 3rem;
 }
 
 .fade_left {
