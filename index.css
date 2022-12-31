@@ -1,10 +1,10 @@
 :root {
   /* --load_time: 5s;
   --login_time: 6s; */
-  /* --load_time: 1s;
-  --login_time: 1s; */
-  --load_time: 0s;
-  --login_time: 0s;
+  --load_time: 1s;
+  --login_time: 1s;
+  /* --load_time: 0s;
+  --login_time: 0s; */
 }
 html {
   scroll-behavior: smooth;
