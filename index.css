@@ -54,30 +54,55 @@ a:hover {color:#ffffff;text-decoration:none;}
   display: flex;
   justify-content: left;
 }
+.text-center{
+  text-align: center;
+}
+.text-left{
+  align-items: left;
+  text-align: left;
+}
 
-.title-center{
+.folder_head_title{
+  display: flex;
+  justify-content: space-evenly;
+  padding: auto;
+  flex: 1;
+  text-align: center;
+  background-color: #3A3939;
+}
+
+.app_head_title{
   display: flex;
   justify-content: center;
-  width: 90%;
+  padding: auto;
+  flex: 1;
+  text-align: center;
+  background-color: #252525;
 }
+.app_head_title p{
+  margin: auto 1vw;
+}
+.folder_head_title p{
+  margin: auto 1vw;
+} 
 
 /* ============================= */
 
 .app_title{
   color: #000000;
-  text-shadow: 1px 1px 2px #ffffff;
   padding: 2.5vw 0 0 0;
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
   align-items: center;
 }
+
 .app_title img{
   width: 20%;
-  height: 20%;
   border-radius: 10px;
   margin: 0 0 0 5vw;
 }
+
 .app_title div{
   flex: 1;
   margin: 0 5vw;
@@ -89,6 +114,31 @@ a:hover {color:#ffffff;text-decoration:none;}
 .app_title h1{
   font-size: 4rem;
   margin: 0;
+}
+.app_title h3{
+  margin: 1vw 0;
+}
+
+.work_jobs{
+  margin-top: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.work_jobs img{
+  height: 2.5vw;
+  margin: .5vw;
+}
+
+.app_text_box{
+  padding: 2vw 5vw;
+}
+.right_container h1{
+  margin: 2vw 0;
+  font-size: 3rem;
+}
+.app_margins{
+  margin: 0 5vw;
 }
 
 .curser{
@@ -126,14 +176,14 @@ a:hover {color:#ffffff;text-decoration:none;}
 .paw_img{
   width: 100%;
 }
-/* 
+
 .fixed-img {
   background-image: url("images/bofax.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-} */
+}
 /* ====== */
 .side_nav{
   display: flex;
@@ -148,8 +198,8 @@ a:hover {color:#ffffff;text-decoration:none;}
   color: #ffffff;
   text-decoration: none;
   font-size: 16px;
-  padding: .2vw 1vw;
-  margin: .5vw 1vw;
+  padding: 5px 10px;
+  margin: 0 10px;
   border-radius: 5px;
 }
 .side_nav a:hover{
@@ -162,22 +212,115 @@ a:hover {color:#ffffff;text-decoration:none;}
   font-weight: bolder;
   margin: .5vw 1vw;
 }
-.right_box{
+.right_container{
   color: #000000;
   float: right;
   width: calc(100% - 150px);
   height: auto;
   background-color: #faf9f6e8;
 }
+.folder_left{
+  float: left;
+  width: 200px;
+  background: #262626;
+  border-right: 2px solid #535353;
+  height: calc(100% - 32px);
+  position: fixed;
+}
+.folder_left a{
+  color: #ffffff;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 5px 0;
+  margin: 5px;
+  border-radius: 5px;
+}
+.folder_left img{
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+}
+.folder_left p{
+  text-decoration: none;
+  font-size: 16px;
+  flex: 1;
+  margin: 0;
+}
+.folder_left a:hover{
+  background-color: #9b9b9b86;
+}
+.chevron{
+  color: #535353;
+  font-size: 12px;
+  padding: 0 5px;
+}
 
-.app_text_box{
-  padding: 2vw 5vw;
+.folder_right{
+  float: right;
+  width: calc(100% - 200px);
+  height: auto;
+  background-color: #484848;
 }
-.app_text_box h1{
-  text-align: center;
-  margin: 5vw 0 0 0;
-  font-size: 3rem;
+.description_box{
+  cursor: pointer;
+  margin: 2vw 5vw;
+  width: auto;
+  background-color: #343538e6;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-width: 20vw;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+.description_box .description{
+  color: #ffffff;
+  flex-direction: column;
+  flex: 1;
+  margin: 1vw;
+}
+.description_box .description p{margin: 0;}
+.description_box .description h1{
+  font-size: 1.5rem;
+  text-align: left; 
+  margin: 0 0 1vw 0;
+}
+
+
+.description_box ul{
+  padding: 0;
+}
+
+.description_box li{
+  margin: 1vw 0;
+}
+
+.description_box img{
+  margin: 1vw;
+  height: 5vw;
+}
+
+/* .hovernow {
+  margin-top:20px;
+  background-color: #7fb0c7;
+  display: flex;
+  min-width: 100%;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+} */
+
+.description_box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+
 
 .fade_left {
   opacity: 0; 

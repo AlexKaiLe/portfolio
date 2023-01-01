@@ -14,7 +14,7 @@ const openPortfolio = () => {
     document.getElementById('folders').classList.toggle('static-page-display')
     setTimeout(function() {
       document.getElementById('Settings').dispatchEvent(new MouseEvent("click"));
-    }, 1500);
+    }, 2000);
 }
 
 const calculateBattery = () => {
@@ -112,32 +112,35 @@ const expandApp = (app) => {
 }
 
 const openCloseApp = (id, folder_or_app) => {
-    document.getElementById(id+"_app").style = null;
-    document.getElementById(id+"_app").classList.toggle('open');
-    document.querySelector('.current_app').innerText = (document.querySelector('.current_app').innerText == id) ? "" : id;
-    
-    if (folder_or_app == "app"){
-        document.getElementById(id).classList.toggle('app_bounce');
-        // document.getElementById(id+"_point").classList.toggle('show')
-    }
-    else if (folder_or_app == "folder"){
-        document.getElementById(id+"_folder").classList.toggle('folder_highlight')
-        document.getElementById(id+"_text").classList.toggle('text_highlight')
-    }
-    for (let i = 0; i < app_list.length; i++) {
-        if (app_list[i] != id) {
-            document.getElementById(app_list[i]).classList.remove('app_bounce');
-            document.getElementById(app_list[i]+"_app").classList.remove("open");
-            // document.getElementById(app_list[i]+"_point").classList.remove('show');
-        }
-    }
-    for (let i = 0; i < folder_list.length; i++) {
-        if (folder_list[i] != id) {
-            document.getElementById(folder_list[i]+"_app").classList.remove("open");
-            document.getElementById(folder_list[i]+"_folder").classList.remove("folder_highlight");
-            document.getElementById(folder_list[i]+"_text").classList.remove('text_highlight');
-        }
-    }
+  elmnt = document.getElementById(id+"_app")
+  elmnt.style = null;
+  elmnt.classList.remove('expand')
+  elmnt.classList.remove('collapse')
+  elmnt.classList.toggle('open');
+  document.querySelector('.current_app').innerText = (document.querySelector('.current_app').innerText == id) ? "" : id;
+  
+  if (folder_or_app == "app"){
+      document.getElementById(id).classList.toggle('app_bounce');
+      document.getElementById(id+"_point").classList.toggle('show')
+  }
+  else if (folder_or_app == "folder"){
+      document.getElementById(id+"_folder").classList.toggle('folder_highlight')
+      document.getElementById(id+"_text").classList.toggle('text_highlight')
+  }
+  for (let i = 0; i < app_list.length; i++) {
+      if (app_list[i] != id) {
+          document.getElementById(app_list[i]).classList.remove('app_bounce');
+          document.getElementById(app_list[i]+"_app").classList.remove("open");
+          document.getElementById(app_list[i]+"_point").classList.remove('show');
+      }
+  }
+  for (let i = 0; i < folder_list.length; i++) {
+      if (folder_list[i] != id) {
+          document.getElementById(folder_list[i]+"_app").classList.remove("open");
+          document.getElementById(folder_list[i]+"_folder").classList.remove("folder_highlight");
+          document.getElementById(folder_list[i]+"_text").classList.remove('text_highlight');
+      }
+  }
 }
 
 for (let i = 0; i < app_list.length; i++) {
@@ -185,22 +188,6 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-
-// const textElement = document.querySelector('fade-in');
-
-// const observer = new IntersectionObserver((entries) => {
-// entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//         textElement.classList.add('in-viewport');
-//     } else {
-//         textElement.classList.remove('in-viewport');
-//     }
-// });
-// });
-
-// // Start observing the text element
-// observer.observe(textElement);
-
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

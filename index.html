@@ -13,7 +13,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
 </head>
 
 <body onload="getDate(), calculateBattery()">
@@ -138,57 +138,81 @@
     <!-- Desktop Apps -->
     <section id="page" class="flex-center static-page dock">
 
-        <!-- <div class="icon_wrapper">
+        <div class="icon_wrapper">
             <button id="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
                 <img src="images/finder.png" />
-                <div id="Finder_point" class="point"></div>
             </button>
-        </div> -->
-        <button id="Finder" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/finder.png" />
-        </button>
-        <button id="Settings" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <a href="#settings_header">
-                <img src="images/settings.png" />
-            </a>
-        </button>
-        <button id="Amazon" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/amazon.png" />
-        </button>
-        <button id="CCMB" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/CCMB.png" />
-        </button>
-        <button id="Brown" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/brown.png" />
-        </button>
-        <button id="Insitro" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/insitro.png" />
-        </button>
-        <button id="Harvard" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/harvard.png" />
-        </button>
-        <button id="UC Davis" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/davis.png" />
-        </button>
-        <button id="Linkedin" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/linkedin.png" />
-        </button>
+            <div id="Finder_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Settings" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <a href="#settings_header">
+                    <img src="images/settings.png" />
+                </a>
+            </button>
+            <div id="Settings_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Amazon" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/amazon.png" />
+            </button>
+            <div id="Amazon_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="CCMB" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/CCMB.png" />
+            </button>
+            <div id="CCMB_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Brown" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/brown.png" />
+            </button>
+            <div id="Brown_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Insitro" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/insitro.png" />
+            </button>
+            <div id="Insitro_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Harvard" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/harvard.png" />
+            </button>
+            <div id="Harvard_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="UC Davis" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/davis.png" />
+            </button>
+            <div id="UC Davis_point" class="point"></div>
+        </div>
+        <div class="icon_wrapper">
+            <button id="Linkedin" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/linkedin.png" />
+            </button>
+            <div id="Linkedin_point" class="point"></div>
+        </div>
         <div class="vert-line"></div>
-        <button id="Trash" class="icon" onclick="openCloseApp(this.id, 'app');">
-            <img src="images/trash.png" />
-        </button>
+        <div class="icon_wrapper">
+            <button id="Trash" class="icon" onclick="openCloseApp(this.id, 'app');">
+                <img src="images/trash.png" />
+            </button>
+            <div id="Trash_point" class="point"></div>
+        </div>
     </section>
     <!-- App Pages -->
     <section>
         <div id="Resume_app" class="app">
             <div id="Resume_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Resume','folder')"></button>
                         <button onclick="shrinkApp('Resume_app')"></button>
                         <button onclick="expandApp('Resume_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Resume
                     </div>
                 </div>
@@ -203,7 +227,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -232,12 +256,12 @@
         <div id="Projects_app" class="app">
             <div id="Projects_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Projects','folder')"></button>
                         <button onclick="shrinkApp('Projects_app')"></button>
                         <button onclick="expandApp('Projects_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Projects
                     </div>
                 </div>
@@ -252,7 +276,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -281,12 +305,12 @@
         <div id="Artwork_app" class="app">
             <div id="Artwork_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Artwork','folder')"></button>
                         <button onclick="shrinkApp('Artwork_app')"></button>
                         <button onclick="expandApp('Artwork_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Artwork
                     </div>
                 </div>
@@ -301,7 +325,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -330,12 +354,12 @@
         <div id="Coursework_app" class="app">
             <div id="Coursework_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Coursework','folder')"></button>
                         <button onclick="shrinkApp('Coursework_app')"></button>
                         <button onclick="expandApp('Coursework_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Coursework
                     </div>
                 </div>
@@ -350,7 +374,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -379,12 +403,12 @@
         <div id="Interests_app" class="app">
             <div id="Interests_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Interests','folder')"></button>
                         <button onclick="shrinkApp('Interests_app')"></button>
                         <button onclick="expandApp('Interests_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Interests
                     </div>
                 </div>
@@ -399,7 +423,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -428,47 +452,248 @@
         <div id="Finder_app" class="app">
             <div id="Finder_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar side_nav_color">
                         <button onclick="openCloseApp('Finder','app')"></button>
                         <button onclick="shrinkApp('Finder_app')"></button>
                         <button onclick="expandApp('Finder_app')"></button>
                     </div>
-                    <div class="title-center">
-                        Finder
+                    <div class="folder_head_title">
+                        <p>Finder</p>
                     </div>
                 </div>
             </div>
             <div class="app_main">
-                <div style="position: relative;">
-                    <div class="side_nav">
-                        <h1>Favorites</h1>
-                        <a href="#0"> Nav_0</a>
-                        <a href="#1"> Nav_1</a>
-                        <a href="#2"> Nav_2</a>
-                        <a href="#3"> Nav_3</a>
-                        <a href="#4"> Nav_4</a>
+                <div class="side_nav">
+                    <h1>Favorites</h1>
+                    <a href="#0">Desktop</a>
+                </div>
+                <div class="right_container">
+                    <div class="folder_left">
+                        <a href="#finder_settings">
+                            <img src="images/settings.png">
+                            <p>Settings</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/amazon.png">
+                            <p>Amazon</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/CCMB.png">
+                            <p>CCMB</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/brown.png">
+                            <p>Brown University</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/insitro.png">
+                            <p>Insitro</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/harvard.png">
+                            <p>Harvard University</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/davis.png">
+                            <p>UC Davis</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/linkedin.png">
+                            <p>LinkedIn</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/resume.png">
+                            <p>Resume</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/folder.png">
+                            <p>Projects</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/folder.png">
+                            <p>Artwork</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/folder.png">
+                            <p>Coursework</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a>
+                            <img src="images/folder.png">
+                            <p>Interests</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
                     </div>
-                    <div class="right_box">
-                        <div id="0" class="app_text_box">
-                            <h1>WELCOME</h1>
-                            <p>To Alex Le's Portfolio</p>
+                    <div class="folder_right">
+                        <!-- <div class="description_box">
+                            <img src="images/amazon.png">
+                            <div class="description">
+                                <h1>Amazon</h1>
+                                <p><b>SDE I:</b> Starting July 2023</p>
+                                <p>Seattle, WA</p>
+                                <ul>
+                                    <li>I look forward to learning from my colleagues and taking on new challenges as I begin my journey as an incoming 2023 Software Development Engineer at Amazon.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div id="1" class="app_title fade_top">
-                            <img src="images/profile.jpg">
-                            <h1> FADE TOP</h1>
+                        <div class="description_box">
+                            <img src="images/CCMB.png">
+                            <div class="description">
+                                <h1>Center for Computational Molecular Biology</h1>
+                                <p><b>Singh Lab:</b> May 2022—Present</p>
+                                <p>Providence, RI</p>
+                                <ul>
+                                    <li>Supervised the counterfactual auto-encoder project that deploys explainable artificial intelligence to better understand the effects of gene expression in single-cell RNA sequencing in Professor Ritambhara Singh's Lab.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div id="2" class="app_title fade_bottom">
-                            <img src="images/profile.jpg">
-                            <h1> FADE BOTTOM</h1>
+                        <div class="description_box">
+                            <img src="images/brown.png">
+                            <div class="description">
+                                <h2>Brown University</h2>
+                                <p><b>Undergraduate Teaching Assistant:</b> Aug 2020 — Dec 2022</p>
+                                <p>Providence, RI</p>
+                                <ul>
+                                    <li><b>Computational Linguistics:</b> Overhauled course material from scratch by developing new projects focused on natural-language processing algorithms such as word embeddings, sentiment analysis, machine translation, recurrent neural networks, hidden Markov models, and generative adversarial networks.</li>
+                                    <li><b>Computer Vision: </b> Improved course material by designing flow diagrams for projects and implementing new workshops teaching feature detection, 3D image reconstruction, and convolutional neural networks.</li>
+                                    <li><b>Introduction to Engineering:</b> Mentored students in human-centered design and technical machine proficiency.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div id="3" class="app_title fade_left">
-                            <img src="images/profile.jpg">
-                            <h1> Fade Left</h1>
+                        <div class="description_box">
+                            <img src="images/insitro.png">
+                            <div class="description">
+                                <h1>Insitro</h1>
+                                <p><b>Software Engineering and Advanced Imaging Intern:</b> May 2022 — Aug 2022</p>
+                                <p>South San Francisco, CA</p>
+                                <ul>
+                                    <li>Developed and validated a new implementation of the Differential Phase Contrast imaging algorithm that allows for dynamic modification and parallel computing, thereby reducing image reconstruction runtime by 70%.</li>
+                                    <li>Implemented a computational imaging pipeline with the DPC algorithm for continuous 24/7 data acquisition.</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div id="4" class="app_title fade_right">
-                            <img src="images/profile.jpg">
-                            <h1> FADE RIGHT</h1>
+                        <div class="description_box">
+                            <img src="images/harvard.png">
+                            <div class="description">
+                                <h1>Harvard University</h1>
+                                <p><b>Neuroscience Machine Learning Intern</b>: Jun 2021 - Aug 2021</p>
+                                <p>Cambridge, MA</p>
+                                <ul>
+                                    <li>Analyzed correlations between neurological activity and physical behavior in rats by designing a neural network to identify unmarked 3D rat joints using spatial, temporal, and behavioral data with 80% accuracy.</li>
+                                    <li>Predicted coordinates of missing joints using a variational auto-encoder and biomechanics with 70% accuracy.</li>
+                                </ul>
+                            </div>
                         </div>
+                        <div class="description_box">
+                            <img src="images/davis.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li>Determined the optimal cell confluence to grow COVID vaccines, reducing laboratory resources and time by 50%.</li>
+                                    <li>Analyzed antibody generation efficacy of adenovirus vector vaccines by designing plasmids, growing cell lines, operating flow cytometry, and performing ELISA tests on COVID-infected rhesus macaque blood samples.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="hr">
+
+                        <div class="description_box">
+                            <img src="images/settings.png">
+                            <div class="description">
+                                <h1>Settings</h1>
+                                <p>Dock application that introduces me and how to navigate my portfolio.</p>
+                            </div>
+                        </div>
+
+                        <div class="description_box">
+                            <img src="images/linkedin.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/resume.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/folder.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/folder.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/folder.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/folder.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="description_box">
+                            <img src="images/trash.png">
+                            <div class="description">
+                                <h1>UC Davis</h1>
+                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
+                                <p>Davis, CA</p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -477,80 +702,224 @@
         <div id="Settings_app" class="app">
             <div id="Settings_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar header_color">
                         <button onclick="openCloseApp('Settings','app')"></button>
                         <button onclick="shrinkApp('Settings_app')"></button>
                         <button onclick="expandApp('Settings_app')"></button>
                     </div>
-                    <div class="title-center">
-                        Settings
+                    <div class="app_head_title">
+                        <p>Settings</p>
                     </div>
                 </div>
             </div>
             <div class="app_main">
-                <div style="position: relative;">
-                    <div class="side_nav">
-                        <h1>Favorites</h1>
-                        <a href="#settings_header">Header</a>
-                        <a href="#settings_about_me">About Me</a>
-                        <a href="#settings_navigation">Navigation</a>
-                        <a href="#settings_design">Design</a>
-                        <a href="#settings_indicators">Indicators</a>
-                    </div>
-                    <div class="right_box">
-                        <div id ="settings_header" class="app_title fade_top">
-                            <img src="images/profile.jpg">
-                            <div>
-                                <h1>ALEXANDER K. LE</h1>
-                                <h3>Computational Biology | Computer Science | Industrial Design</h3>
-                                <h3>Incoming Software Engineer at Amazon</h3>
-                            </div>
+                <div class="side_nav">
+                    <h1>Favorites</h1>
+                    <a href="#settings_header">Header</a>
+                    <a href="#settings_about_me">About Me</a>
+                    <a href="#settings_navigation">Navigation</a>
+                    <a href="#settings_desktop">Desktop Apps</a>
+                    <a href="#settings_dock">Dock Apps</a>
+                </div>
+                <div class="right_container">
+                    <div id="settings_header" class="app_title fade_top">
+                        <img src="images/profile.jpg">
+                        <div class="text-left">
+                            <h1>ALEXANDER K. LE</h1>
+                            <h3>Computational Biology | Computer Science | Industrial Design</h3>
+                            <h3>Incoming Software Engineer at Amazon</h3>
                         </div>
-                        <div id ="settings_about_me" class="app_text_box">
-                            <h2 class="fade_left">About Me</h2>
-                            <p>Hello! My name is Alex Le and I am an incoming software engineer at Amazon. I am curently
-                                a senior at Brown University, where I am studying Computational Biology with an emphasis
-                                on
-                                software engineering, deep learning, and molecular biology. My interests include
-                                software design and development, artificial intelligence, machine learning, computer
-                                vision, and natural language processing. I am passionate about using technology to solve
-                                problems and make a positive impact in the world. I am excited to bring my skills and
-                                interests to my career at Amazon and continue learning and growing as a software
-                                engineer.
-                            </p>
-                            <div class="flex-center">
-                                <a class="btn" href="https://github.com/AlexKaiLe"><i class="fa fa-github"></i></a>
-                                <a class="btn" href="https://www.linkedin.com/in/alexkaile/"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="btn" href="mailto: alexkaile@gmail.com"><i class="fa fa-envelope"></i></a>
-                            </div>
-                            <h1 id ="settings_navigation" class="fade_right">Navigating My Portfolio</h1>
-                            <div class="flex-center">
-                                <img class="paw_img" src="images/paws.png">
-                            </div>
-                            <h2 id ="settings_design" class="fade_left">Portfolio Design</h2>
-                            <p>This website was inspired by the UI/UX of MacBooks. The navigation of this portfolio is
-                                similar to how one would use the desktop on a MacBook. You can interact with the
-                                navigation bar at the top, the dock at the bottom, and folders on the right.</p>
-                            <ul>
-                                <li><b>Navbar:</b> Information about current state of your computer</li>
-                                <li><b>Dock:</b> Information about work and education experience</li>
-                                <li><b>Folder:</b> Information about personal projects and interests</li>
-                            </ul>
-                            <h2 id ="settings_indicators" class="fade_left">Curser Indicators</h2>
-                            <p>As you hover over different elements on the website, you may notice the cursor changing
-                                shape. This helps to provide visual cues for users as they interact with the website.
-                            </p>
-                            <ul>
-                                <li><img class="curser" src="images/arrow.png"> <b>Arrow Curser:</b> Indicates mouse
-                                    location and indicates non interactive elements </li>
-                                <li><img class="curser" src="images/pointer.png"> <b>Pointer Curser:</b> Indicates a
-                                    clickable element</li>
-                                <li><img class="curser" src="images/cross.png"> <b>Move Curser:</b> Indicates a movable
-                                    element</li>
-                                <li><img class="curser" src="images/down_right.png"> <b>Down Right Curser:</b> Indicates
-                                    an expandable element </li>
-                            </ul>
+                    </div>
+                    <div class="work_jobs fade_right">
+                        <img src="images/logo_amazon.png">
+                        <img src="images/logo_CCMB.png">
+                        <img src="images/logo_brown.png">
+                        <img src="images/logo_insitro.png">
+                        <img src="images/logo_harvard.png">
+                        <img src="images/logo_davis.png">
+                    </div>
+                    <div id="settings_about_me" class="app_text_box">
+                        <h2 class="fade_top">About Me</h2>
+                        <p>Hello! My name is Alex Le and I am an incoming software engineer at Amazon. I am curently
+                            a senior at Brown University, where I am studying Computational Biology with an emphasis
+                            on software engineering, deep learning, and molecular biology. My interests include
+                            software design and development, artificial intelligence, machine learning, computer
+                            vision, and natural language processing. I am passionate about using technology to solve
+                            problems and make a positive impact in the world. I am excited to bring my skills and
+                            interests to my career at Amazon and continue learning and growing as a software
+                            engineer.
+                        </p>
+                        <div class="flex-center">
+                            <a class="btn" href="https://github.com/AlexKaiLe"><i class="fa fa-github"></i></a>
+                            <a class="btn" href="https://www.linkedin.com/in/alexkaile/"><i
+                                    class="fa fa-linkedin"></i></a>
+                            <a class="btn" href="mailto: alexkaile@gmail.com"><i class="fa fa-envelope"></i></a>
+                        </div>
+
+                        
+                    </div>
+                    <div class="text-center">
+                        <h1 id="settings_navigation" class="fade_right">Navigating My Portfolio</h1>
+                    </div>
+                    <div class="app_text_box">
+                        <div class="flex-center">
+                            <img class="paw_img" src="images/paws.png">
+                        </div>
+                        <h2 class="fade_left">Portfolio Design</h2>
+                        <p>This website was inspired by the UI/UX of MacBooks. The navigation of this portfolio is
+                            similar to how one would use the desktop on a MacBook. You can interact with the
+                            navigation bar at the top, the dock at the bottom, and folders on the right.</p>
+                        <ul>
+                            <li><b>Navbar:</b> Information about current state of your computer</li>
+                            <li><b>Dock:</b> Information about work and education experience</li>
+                            <li><b>Folder:</b> Information about personal projects and interests</li>
+                        </ul>
+                        <h2 class="fade_left">Curser Indicators</h2>
+                        <p>As you hover over different elements on the website, you may notice the cursor changing
+                            shape. This helps to provide visual cues for users as they interact with the website. Have
+                            fun exploring!
+                        </p>
+                        <ul>
+                            <li><img class="curser" src="images/arrow.png"> <b>Arrow Curser:</b> Indicates mouse
+                                location and indicates non interactive elements </li>
+                            <li><img class="curser" src="images/pointer.png"> <b>Pointer Curser:</b> Indicates a
+                                clickable element</li>
+                            <li><img class="curser" src="images/cross.png"> <b>Move Curser:</b> Indicates a movable
+                                element</li>
+                            <li><img class="curser" src="images/down_right.png"> <b>Down Right Curser:</b> Indicates
+                                an expandable element </li>
+                        </ul>
+                        <p>*Hint: Try hovering over different elements and observe which curser appears</p>
+                        <ul>
+                            <li>Try clicking the elements at the top of the app window (ie: titlebar, close, minimize, expand)</li>
+                            <li>Try clicking the elements at the bottom right of the app window (ie: resize) </li>
+                            <li>Try finding clickable element in the top navigation bar</li>
+                            <li>Try clicking on the desktop documents and folders</li>
+                            <li>Try clicking on the dock applications</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <h1 id="settings_desktop" class="fade_right">Desktop Navigation</h1>
+                        <p>Click on the icons below to vist the app</p>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Resume','folder')">
+                        <img src="images/resume.png">
+                        <div class="description">
+                            <h1>Resume</h1>
+                            <p><b>Last updated:</b> Sep 2022</p>
+                            <p>Document that allows my current resume to be viewable and downloadable</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Projects','folder')">
+                        <img src="images/folder.png">
+                        <div class="description">
+                            <h1>Projects</h1>
+                            <p>Application that showcases coding, design and biomedical projects</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Artwork','folder')">
+                        <img src="images/folder.png">
+                        <div class="description">
+                            <h1>Artwork</h1>
+                            <p>Application that showcases art projects</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Coursework','folder')">
+                        <img src="images/folder.png">
+                        <div class="description">
+                            <h1>Coursework</h1>
+                            <p>Application that showcases past coursework</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Interests','folder')">
+                        <img src="images/folder.png">
+                        <div class="description">
+                            <h1>Interests</h1>
+                            <p>Application that showcases current hobbies and interests</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 5vw;">
+                        <h1 id="settings_dock" class="fade_right">Dock Navigation</h1>
+                        <p>Click on the icons below to vist the app</p>
+                    </div>
+                    <h2 class="app_margins">Work Experience</h2>
+                    <div class="description_box" onclick="openCloseApp('Amazon','app')">
+                        <img src="images/amazon.png">
+                        <div class="description">
+                            <h1>Amazon</h1>
+                            <p><b>SDE I:</b> Starting July 2023</p>
+                            <p>Seattle, WA</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('CCMB','app')">
+                        <img src="images/CCMB.png">
+                        <div class="description">
+                            <h1>Center for Computational Molecular Biology</h1>
+                            <p><b>Deep Learning Senior Thesis - Singh Lab:</b> May 2022—Present</p>
+                            <p>Providence, RI</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Brown','app')">
+                        <img src="images/brown.png">
+                        <div class="description">
+                            <h1>Brown University</h1>
+                            <p><b>Undergraduate Teaching Assistant:</b> Aug 2020 — Dec 2022</p>
+                            <p>Providence, RI</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Insitro','app')">
+                        <img src="images/insitro.png">
+                        <div class="description">
+                            <h1>Insitro</h1>
+                            <p><b>Software Engineering and Advanced Imaging Intern:</b> May 2022 — Aug 2022</p>
+                            <p>South San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Harvard','app')">
+                        <img src="images/harvard.png">
+                        <div class="description">
+                            <h1>Harvard University</h1>
+                            <p><b>Neuroscience Machine Learning Intern:</b> Jun 2021 - Aug 2021</p>
+                            <p>Cambridge, MA</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('UC Davis','app')">
+                        <img src="images/davis.png">
+                        <div class="description">
+                            <h1>UC Davis</h1>
+                            <p><b>SARS-CoV-2 Vaccine Development Assistant:</b> Jun 2020 - Aug 2020</p>
+                            <p><b>HIV Vaccine Development Assistant:</b> Jun 2019 - Aug 2019</p>
+                            <p>Davis, CA</p>
+                        </div>
+                    </div>
+                    <h2 class="app_margins">Utility Apps</h2>
+                    <div class="description_box" onclick="openCloseApp('Finder','app')">
+                        <img src="images/finder.png">
+                        <div class="description">
+                            <h1>Finder</h1>
+                            <p>Application that lists all the apps, documents and folders in a finder viewport, allowing for easy access.</p>
+                        </div>
+                    </div>
+                    <div class="description_box" href="#settings_header">
+                        <img src="images/settings.png">
+                        <div class="description">
+                            <h1>Settings</h1>
+                            <p>Application that introduces me and how to navigate my portfolio.</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Linkedin','app')">
+                        <img src="images/linkedin.png">
+                        <div class="description">
+                            <h1>LinkedIn</h1>
+                            <p>Application that provide ways to contact me through different platforms.</p>
+                        </div>
+                    </div>
+                    <div class="description_box" onclick="openCloseApp('Trash','app')">
+                        <img src="images/trash.png">
+                        <div class="description">
+                            <h1>Trash</h1>
+                            <p>Application that shows past experience or projects that may not be relevent anymore.</p>
                         </div>
                     </div>
                 </div>
@@ -560,12 +929,12 @@
         <div id="Amazon_app" class="app">
             <div id="Amazon_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Amazon','app')"></button>
                         <button onclick="shrinkApp('Amazon_app')"></button>
                         <button onclick="expandApp('Amazon_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Amazon
                     </div>
                 </div>
@@ -580,7 +949,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -609,12 +978,12 @@
         <div id="CCMB_app" class="app">
             <div id="CCMB_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('CCMB','app')"></button>
                         <button onclick="shrinkApp('CCMB_app')"></button>
                         <button onclick="expandApp('CCMB_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         CCMB
                     </div>
                 </div>
@@ -629,7 +998,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -658,12 +1027,12 @@
         <div id="Brown_app" class="app">
             <div id="Brown_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Brown','app')"></button>
                         <button onclick="shrinkApp('Browne_app')"></button>
                         <button onclick="expandApp('Brown_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Brown
                     </div>
                 </div>
@@ -678,7 +1047,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -707,12 +1076,12 @@
         <div id="Insitro_app" class="app">
             <div id="Insitro_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Insitro','app')"></button>
                         <button onclick="shrinkApp('Insitro_app')"></button>
                         <button onclick="expandApp('Insitro_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Insitro
                     </div>
                 </div>
@@ -727,7 +1096,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -756,12 +1125,12 @@
         <div id="Harvard_app" class="app">
             <div id="Harvard_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Harvard','app')"></button>
                         <button onclick="shrinkApp('Harvard_app')"></button>
                         <button onclick="expandApp('Harvard_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Harvard
                     </div>
                 </div>
@@ -776,7 +1145,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -805,12 +1174,12 @@
         <div id="UC Davis_app" class="app">
             <div id="UC Davis_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('UC Davis','app')"></button>
                         <button onclick="shrinkApp('UC Davis_app')"></button>
                         <button onclick="expandApp('UC Davis_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         UC Davis
                     </div>
                 </div>
@@ -825,7 +1194,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -854,12 +1223,12 @@
         <div id="Linkedin_app" class="app">
             <div id="Linkedin_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Linkedin','app')"></button>
                         <button onclick="shrinkApp('Linkedin_app')"></button>
                         <button onclick="expandApp('Linkedin_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Linkedin
                     </div>
                 </div>
@@ -874,7 +1243,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
@@ -903,12 +1272,12 @@
         <div id="Trash_app" class="app">
             <div id="Trash_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="taskbar">
+                    <div class="app_taskbar">
                         <button onclick="openCloseApp('Trash','app')"></button>
                         <button onclick="shrinkApp('Trash_app')"></button>
                         <button onclick="expandApp('Trash_app')"></button>
                     </div>
-                    <div class="title-center">
+                    <div class="app_head_title">
                         Trash
                     </div>
                 </div>
@@ -923,7 +1292,7 @@
                         <a href="#3"> Nav_3</a>
                         <a href="#4"> Nav_4</a>
                     </div>
-                    <div class="right_box">
+                    <div class="right_container">
                         <div id="0" class="app_text_box">
                             <h1>WELCOME</h1>
                             <p>To Alex Le's Portfolio</p>
