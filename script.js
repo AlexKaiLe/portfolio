@@ -6,14 +6,16 @@ const date = new Date();
 const clockElement = document.getElementById("clock");
 const powerSource = document.querySelector(".power_source");
 const batteryProgress = document.querySelector(".battery_progress")
-
+setTimeout(function() {
+  document.getElementById('change-button').dispatchEvent(new MouseEvent("click"));
+});
 const openPortfolio = () => {
     document.getElementById('blur').style.animation = "static-img 1s normal forwards";
     document.getElementById('page').classList.toggle('static-page-display')
     document.getElementById('navbar').classList.toggle('static-page-display')
     document.getElementById('folders').classList.toggle('static-page-display')
     setTimeout(function() {
-      document.getElementById('Settings').dispatchEvent(new MouseEvent("click"));
+      document.getElementById('Amazon').dispatchEvent(new MouseEvent("click"));
     }, 2000);
 }
 
@@ -203,3 +205,32 @@ document.querySelectorAll('.fade_left').forEach(element => {observer.observe(ele
 document.querySelectorAll('.fade_right').forEach(element => {observer.observe(element);});
 document.querySelectorAll('.fade_top').forEach(element => {observer.observe(element);});
 document.querySelectorAll('.fade_bottom').forEach(element => {observer.observe(element);});
+
+
+const openFinderFolder = (id) => {
+  var x = document.getElementById("Finder_app").querySelectorAll(".folder_left a"); 
+  for (let i = 0; i < x.length; i++) {
+    x[i].classList.remove("open")
+  }
+  document.getElementById(id+"-a").classList.add("open")
+
+  document.getElementById("finder_" + id).classList.add('open')
+  for (let i = 0; i < app_list.length; i++) {
+    if (app_list[i] != id && app_list[i] != "Finder"){
+      document.getElementById("finder_"+app_list[i]).classList.remove('open')
+    }
+  }
+  for (let i = 0; i < folder_list.length; i++) {
+    if (folder_list[i] != id && folder_list[i] != "Finder"){
+      document.getElementById("finder_"+folder_list[i]).classList.remove('open')
+    }
+  }
+}
+const openFinderNav = (id) =>{
+  var open_id = id;
+  var close_id = id == "finder_desktop" ? "finder_dock" : "finder_desktop";
+  document.getElementById(open_id+"_open").classList.add('open')
+  document.getElementById(close_id+"_open").classList.remove('open')
+  document.getElementById(open_id).classList.add('open')
+  document.getElementById(close_id).classList.remove('open')
+}

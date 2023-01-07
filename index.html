@@ -465,235 +465,218 @@
             <div class="app_main">
                 <div class="side_nav">
                     <h1>Favorites</h1>
-                    <a href="#0">Desktop</a>
+                    <a id="finder_desktop" onclick="openFinderNav(this.id)" class="open">Desktop</a>
+                    <a id="finder_dock" onclick="openFinderNav(this.id)">Apps</a>
                 </div>
-                <div class="right_container">
+                <div id="finder_desktop_open" class="folder_right_container open">
                     <div class="folder_left">
-                        <a href="#finder_settings">
-                            <img src="images/settings.png">
-                            <p>Settings</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/amazon.png">
-                            <p>Amazon</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/CCMB.png">
-                            <p>CCMB</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/brown.png">
-                            <p>Brown University</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/insitro.png">
-                            <p>Insitro</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/harvard.png">
-                            <p>Harvard University</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/davis.png">
-                            <p>UC Davis</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
-                            <img src="images/linkedin.png">
-                            <p>LinkedIn</p>
-                            <i class="fa fa-chevron-right chevron"></i>
-                        </a>
-                        <a>
+                        <a id="Resume-a" onclick="openFinderFolder('Resume')">
                             <img src="images/resume.png">
                             <p>Resume</p>
                             <i class="fa fa-chevron-right chevron"></i>
                         </a>
-                        <a>
+                        <a id="Projects-a" onclick="openFinderFolder('Projects')">
                             <img src="images/folder.png">
                             <p>Projects</p>
                             <i class="fa fa-chevron-right chevron"></i>
                         </a>
-                        <a>
+                        <a id="Artwork-a" onclick="openFinderFolder('Artwork')">
                             <img src="images/folder.png">
                             <p>Artwork</p>
                             <i class="fa fa-chevron-right chevron"></i>
                         </a>
-                        <a>
+                        <a id="Coursework-a" onclick="openFinderFolder('Coursework')">
                             <img src="images/folder.png">
                             <p>Coursework</p>
                             <i class="fa fa-chevron-right chevron"></i>
                         </a>
-                        <a>
+                        <a id="Interests-a" onclick="openFinderFolder('Interests')">
                             <img src="images/folder.png">
                             <p>Interests</p>
                             <i class="fa fa-chevron-right chevron"></i>
                         </a>
                     </div>
-                    <div class="folder_right">
-                        <!-- <div class="description_box">
-                            <img src="images/amazon.png">
-                            <div class="description">
-                                <h1>Amazon</h1>
-                                <p><b>SDE I:</b> Starting July 2023</p>
-                                <p>Seattle, WA</p>
-                                <ul>
-                                    <li>I look forward to learning from my colleagues and taking on new challenges as I begin my journey as an incoming 2023 Software Development Engineer at Amazon.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/CCMB.png">
-                            <div class="description">
-                                <h1>Center for Computational Molecular Biology</h1>
-                                <p><b>Singh Lab:</b> May 2022—Present</p>
-                                <p>Providence, RI</p>
-                                <ul>
-                                    <li>Supervised the counterfactual auto-encoder project that deploys explainable artificial intelligence to better understand the effects of gene expression in single-cell RNA sequencing in Professor Ritambhara Singh's Lab.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/brown.png">
-                            <div class="description">
-                                <h2>Brown University</h2>
-                                <p><b>Undergraduate Teaching Assistant:</b> Aug 2020 — Dec 2022</p>
-                                <p>Providence, RI</p>
-                                <ul>
-                                    <li><b>Computational Linguistics:</b> Overhauled course material from scratch by developing new projects focused on natural-language processing algorithms such as word embeddings, sentiment analysis, machine translation, recurrent neural networks, hidden Markov models, and generative adversarial networks.</li>
-                                    <li><b>Computer Vision: </b> Improved course material by designing flow diagrams for projects and implementing new workshops teaching feature detection, 3D image reconstruction, and convolutional neural networks.</li>
-                                    <li><b>Introduction to Engineering:</b> Mentored students in human-centered design and technical machine proficiency.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/insitro.png">
-                            <div class="description">
-                                <h1>Insitro</h1>
-                                <p><b>Software Engineering and Advanced Imaging Intern:</b> May 2022 — Aug 2022</p>
-                                <p>South San Francisco, CA</p>
-                                <ul>
-                                    <li>Developed and validated a new implementation of the Differential Phase Contrast imaging algorithm that allows for dynamic modification and parallel computing, thereby reducing image reconstruction runtime by 70%.</li>
-                                    <li>Implemented a computational imaging pipeline with the DPC algorithm for continuous 24/7 data acquisition.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/harvard.png">
-                            <div class="description">
-                                <h1>Harvard University</h1>
-                                <p><b>Neuroscience Machine Learning Intern</b>: Jun 2021 - Aug 2021</p>
-                                <p>Cambridge, MA</p>
-                                <ul>
-                                    <li>Analyzed correlations between neurological activity and physical behavior in rats by designing a neural network to identify unmarked 3D rat joints using spatial, temporal, and behavioral data with 80% accuracy.</li>
-                                    <li>Predicted coordinates of missing joints using a variational auto-encoder and biomechanics with 70% accuracy.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/davis.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li>Determined the optimal cell confluence to grow COVID vaccines, reducing laboratory resources and time by 50%.</li>
-                                    <li>Analyzed antibody generation efficacy of adenovirus vector vaccines by designing plasmids, growing cell lines, operating flow cytometry, and performing ELISA tests on COVID-infected rhesus macaque blood samples.</li>
-                                </ul>
-                            </div>
+                    <div class="finder_right open"></div>
+                    <div id="finder_Resume" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Resume','folder')">
+                            <img src="images/resume.png">
                         </div>
                         <hr class="hr">
-
-                        <div class="description_box">
+                        <h2>Resume</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Document that allows my current resume to be viewable and downloadable</p>
+                    </div>
+                    <div id="finder_Projects" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Projects','folder')">
+                            <img src="images/folder.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Projects</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that showcases coding, design and biomedical projects</p>
+                    </div>
+                    <div id="finder_Artwork" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Artwork','folder')">
+                            <img src="images/folder.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Artwork</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that showcases art projects</p>
+                    </div>
+                    <div id="finder_Coursework" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Coursework','folder')">
+                            <img src="images/folder.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>System Settings</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that showcases past coursework</p>
+                    </div>
+                    <div id="finder_Interests" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Interests','folder')">
+                            <img src="images/folder.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Interets</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that showcases current hobbies and interests</p>
+                    </div>
+                </div>
+                <div id="finder_dock_open" class="folder_right_container">
+                    <div class="folder_left">
+                        <a id="Settings-a" onclick="openFinderFolder('Settings')">
                             <img src="images/settings.png">
-                            <div class="description">
-                                <h1>Settings</h1>
-                                <p>Dock application that introduces me and how to navigate my portfolio.</p>
-                            </div>
-                        </div>
-
-                        <div class="description_box">
+                            <p>Settings</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Amazon-a" onclick="openFinderFolder('Amazon')">
+                            <img src="images/amazon.png">
+                            <p>Amazon</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="CCMB-a" onclick="openFinderFolder('CCMB')">
+                            <img src="images/CCMB.png">
+                            <p>CCMB</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Brown-a" onclick="openFinderFolder('Brown')">
+                            <img src="images/brown.png">
+                            <p>Brown University</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Insitro-a" onclick="openFinderFolder('Insitro')">
+                            <img src="images/insitro.png">
+                            <p>Insitro</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Harvard-a" onclick="openFinderFolder('Harvard')">
+                            <img src="images/harvard.png">
+                            <p>Harvard University</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="UC Davis-a" onclick="openFinderFolder('UC Davis')">
+                            <img src="images/davis.png">
+                            <p>UC Davis</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Linkedin-a" onclick="openFinderFolder('Linkedin')">
                             <img src="images/linkedin.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/resume.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/folder.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/folder.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/folder.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
-                            <img src="images/folder.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="description_box">
+                            <p>LinkedIn</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                        <a id="Trash-a" onclick="openFinderFolder('Trash')">
                             <img src="images/trash.png">
-                            <div class="description">
-                                <h1>UC Davis</h1>
-                                <p><b>SARS-CoV-2 Vaccine Development Assistant</b>: Jun 2020 - Aug 2020</p>
-                                <p>Davis, CA</p>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div> -->
+                            <p>Trash</p>
+                            <i class="fa fa-chevron-right chevron"></i>
+                        </a>
+                    </div>
+                    <div class="finder_right open"></div>
+                    <div id="finder_Settings" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Settings','app')">
+                            <img src="images/settings.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>System Settings</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that introduces me and how to navigate my portfolio.</p>
+                    </div>
+                    <div id="finder_Amazon" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Amazon','app')">
+                            <img src="images/amazon.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Amazon</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p><b>SDE I:</b> Starting July 2023</p>
+                        <p>Seattle, WA</p>
+                    </div>
+                    <div id="finder_CCMB" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('CCMB','app')">
+                            <img src="images/CCMB.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>CCMB</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p><b>Deep Learning Senior Thesis - Singh Lab:</b> May 2022—Present</p>
+                        <p>Providence, RI</p>
+                    </div>
+                    <div id="finder_Brown" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Brown','app')">
+                            <img src="images/brown.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Brown University</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p><b>Undergraduate Teaching Assistant:</b> Aug 2020 — Dec 2022</p>
+                        <p>Providence, RI</p>
+                    </div>
+                    <div id="finder_Insitro" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Insitro','app')">
+                            <img src="images/insitro.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Insitro</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p><b>Software Engineering and Advanced Imaging Intern:</b> May 2022 — Aug 2022</p>
+                        <p>South San Francisco, CA</p>
+                    </div>
+                    <div id="finder_Harvard" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Harvard','app')">
+                            <img src="images/harvard.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Harvard University</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p><b>Neuroscience Machine Learning Intern:</b> Jun 2021 - Aug 2021</p>
+                        <p>Cambridge, MA</p>
+                    </div>
+                    <div id="finder_UC Davis" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('UC Davis','app')">
+                            <img src="images/davis.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>UC Davis</h2>
+                        <p><b>HIV Vaccine Development Assistant:</b> Jun 2019 - Aug 2019</p>
+                        <p>Davis, CA</p>
+                    </div>
+                    <div id="finder_Linkedin" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Linkedin','app')">
+                            <img src="images/linkedin.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>LinkedIn</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that provide ways to contact me through different platforms.</p>
+                    </div>
+                    <div id="finder_Trash" class="finder_right">
+                        <div class="flex-center" onclick="openCloseApp('Trash','app')">
+                            <img src="images/trash.png">
+                        </div>
+                        <hr class="hr">
+                        <h2>Trash</h2>
+                        <h4>Application - 6.1 MB</h4>
+                        <p>Application that shows past experience or projects that may not be relevent anymore.</p>
                     </div>
                 </div>
             </div>
@@ -756,12 +739,12 @@
                             <a class="btn" href="mailto: alexkaile@gmail.com"><i class="fa fa-envelope"></i></a>
                         </div>
 
-                        
-                    </div>
-                    <div class="text-center">
-                        <h1 id="settings_navigation" class="fade_right">Navigating My Portfolio</h1>
+
                     </div>
                     <div class="app_text_box">
+                        <div class="text-center">
+                            <h1 id="settings_navigation">Navigating My Portfolio</h1>
+                        </div>
                         <div class="flex-center">
                             <img class="paw_img" src="images/paws.png">
                         </div>
@@ -791,18 +774,16 @@
                         </ul>
                         <p>*Hint: Try hovering over different elements and observe which curser appears</p>
                         <ul>
-                            <li>Try clicking the elements at the top of the app window (ie: titlebar, close, minimize, expand)</li>
-                            <li>Try clicking the elements at the bottom right of the app window (ie: resize) </li>
-                            <li>Try finding clickable element in the top navigation bar</li>
-                            <li>Try clicking on the desktop documents and folders</li>
-                            <li>Try clicking on the dock applications</li>
+                            <li>Try clicking the elements at the top and bottom of the app window (ie: titlebar, close,
+                                minimize, expand, resize)</li>
+                            <li>Try clicking elements in the toolbar and apps on the desktop/dock</li>
                         </ul>
                     </div>
                     <div class="text-center">
-                        <h1 id="settings_desktop" class="fade_right">Desktop Navigation</h1>
+                        <h1 id="settings_desktop">Desktop Apps</h1>
                         <p>Click on the icons below to vist the app</p>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Resume','folder')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Resume','folder')">
                         <img src="images/resume.png">
                         <div class="description">
                             <h1>Resume</h1>
@@ -810,28 +791,28 @@
                             <p>Document that allows my current resume to be viewable and downloadable</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Projects','folder')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Projects','folder')">
                         <img src="images/folder.png">
                         <div class="description">
                             <h1>Projects</h1>
                             <p>Application that showcases coding, design and biomedical projects</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Artwork','folder')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Artwork','folder')">
                         <img src="images/folder.png">
                         <div class="description">
                             <h1>Artwork</h1>
                             <p>Application that showcases art projects</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Coursework','folder')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Coursework','folder')">
                         <img src="images/folder.png">
                         <div class="description">
                             <h1>Coursework</h1>
                             <p>Application that showcases past coursework</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Interests','folder')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Interests','folder')">
                         <img src="images/folder.png">
                         <div class="description">
                             <h1>Interests</h1>
@@ -840,11 +821,11 @@
                     </div>
 
                     <div class="text-center" style="margin-top: 5vw;">
-                        <h1 id="settings_dock" class="fade_right">Dock Navigation</h1>
+                        <h1 id="settings_dock">Dock Apps</h1>
                         <p>Click on the icons below to vist the app</p>
                     </div>
                     <h2 class="app_margins">Work Experience</h2>
-                    <div class="description_box" onclick="openCloseApp('Amazon','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Amazon','app')">
                         <img src="images/amazon.png">
                         <div class="description">
                             <h1>Amazon</h1>
@@ -852,7 +833,7 @@
                             <p>Seattle, WA</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('CCMB','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('CCMB','app')">
                         <img src="images/CCMB.png">
                         <div class="description">
                             <h1>Center for Computational Molecular Biology</h1>
@@ -860,7 +841,7 @@
                             <p>Providence, RI</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Brown','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Brown','app')">
                         <img src="images/brown.png">
                         <div class="description">
                             <h1>Brown University</h1>
@@ -868,7 +849,7 @@
                             <p>Providence, RI</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Insitro','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Insitro','app')">
                         <img src="images/insitro.png">
                         <div class="description">
                             <h1>Insitro</h1>
@@ -876,7 +857,7 @@
                             <p>South San Francisco, CA</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Harvard','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Harvard','app')">
                         <img src="images/harvard.png">
                         <div class="description">
                             <h1>Harvard University</h1>
@@ -884,7 +865,7 @@
                             <p>Cambridge, MA</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('UC Davis','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('UC Davis','app')">
                         <img src="images/davis.png">
                         <div class="description">
                             <h1>UC Davis</h1>
@@ -894,28 +875,32 @@
                         </div>
                     </div>
                     <h2 class="app_margins">Utility Apps</h2>
-                    <div class="description_box" onclick="openCloseApp('Finder','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Finder','app')">
                         <img src="images/finder.png">
                         <div class="description">
                             <h1>Finder</h1>
-                            <p>Application that lists all the apps, documents and folders in a finder viewport, allowing for easy access.</p>
+                            <p>Application that lists all the apps, documents and folders in a finder viewport, allowing
+                                for easy access.</p>
                         </div>
                     </div>
-                    <div class="description_box" href="#settings_header">
-                        <img src="images/settings.png">
-                        <div class="description">
-                            <h1>Settings</h1>
-                            <p>Application that introduces me and how to navigate my portfolio.</p>
+                    <a href="#settings_header">
+                        <div class="description_box fade_left">
+                            <img src="images/settings.png">
+                            <div class="description">
+                                <h1>Settings</h1>
+                                <p>Application that introduces me and how to navigate my portfolio.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="description_box" onclick="openCloseApp('Linkedin','app')">
+                    </a>
+
+                    <div class="description_box fade_left" onclick="openCloseApp('Linkedin','app')">
                         <img src="images/linkedin.png">
                         <div class="description">
                             <h1>LinkedIn</h1>
                             <p>Application that provide ways to contact me through different platforms.</p>
                         </div>
                     </div>
-                    <div class="description_box" onclick="openCloseApp('Trash','app')">
+                    <div class="description_box fade_left" onclick="openCloseApp('Trash','app')">
                         <img src="images/trash.png">
                         <div class="description">
                             <h1>Trash</h1>
@@ -929,13 +914,13 @@
         <div id="Amazon_app" class="app">
             <div id="Amazon_app_header" class="app_header">
                 <div class="flex-left">
-                    <div class="app_taskbar">
+                    <div class="app_taskbar header_color">
                         <button onclick="openCloseApp('Amazon','app')"></button>
                         <button onclick="shrinkApp('Amazon_app')"></button>
                         <button onclick="expandApp('Amazon_app')"></button>
                     </div>
                     <div class="app_head_title">
-                        Amazon
+                        <p>Amazon</p>
                     </div>
                 </div>
             </div>
@@ -943,36 +928,55 @@
                 <div style="position: relative;">
                     <div class="side_nav">
                         <h1>Favorites</h1>
-                        <a href="#0"> Nav_0</a>
-                        <a href="#1"> Nav_1</a>
-                        <a href="#2"> Nav_2</a>
-                        <a href="#3"> Nav_3</a>
-                        <a href="#4"> Nav_4</a>
+                        <a href="#amazon_header">Amazon</a>
                     </div>
                     <div class="right_container">
-                        <div id="0" class="app_text_box">
-                            <h1>WELCOME</h1>
-                            <p>To Alex Le's Portfolio</p>
+                        <div id="amazon_header" class="app_title fade_top">
+                            <img src="images/amazon.png">
+                            <div class="text-left">
+                                <h1>Amazon</h1>
+                                <h3>Incoming Software Engineer at Amazon</h3>
+                                <h3>July 24, 2023</h3>
+                            </div>
                         </div>
-                        <div id="1" class="app_title fade_top">
-                            <img src="images/profile.jpg">
-                            <h1> FADE TOP</h1>
-                        </div>
-                        <div id="2" class="app_title fade_bottom">
-                            <img src="images/profile.jpg">
-                            <h1> FADE BOTTOM</h1>
-                        </div>
-                        <div id="3" class="app_title fade_left">
-                            <img src="images/profile.jpg">
-                            <h1> Fade Left</h1>
-                        </div>
-                        <div id="4" class="app_title fade_right">
-                            <img src="images/profile.jpg">
-                            <h1> FADE RIGHT</h1>
+                        <div id="" class="app_text_box">
+                            <h2 class="fade_left">Motivation</h2>
+                            <p>I hope to join the medical efforts at Amazon to combine my passion for biology and
+                                computer science. I believe that Amazon's focus on innovation and technology makes it an
+                                ideal place for me to contribute my skills and knowledge to the field of healthcare. In
+                                particular, I am excited about the potential to use my expertise in computer science to
+                                develop software and technologies that can improve patient care and support the work of
+                                medical professionals. Additionally, I hope to use my understanding of biology to help
+                                advance Amazon's research and development efforts in the healthcare sector, whether
+                                through the development of new treatments or the identification of novel targets for
+                                drug discovery. Overall, I am confident that my passion for both biology and computer
+                                science, along with Amazon's commitment to innovation, will allow me to make a
+                                meaningful impact in the field of healthcare.</p>
+                            <h2 class="fade_left">Amazon Products</h2>
+                            <p>Amazon is an American multinational technology company that focuses on e-commerce,
+                                cloud computing, digital streaming, and artificial intelligence. It is one of the
+                                world's largest online retailers and has a wide range of products and services,
+                                including:</p>
+                            <ul>
+                                <li><b>Amazon Marketplace:</b> a platform for third-party sellers to sell their products
+                                </li>
+                                <li><b>Amazon Prime:</b> a subscription service that offers free two-day shipping,
+                                    streaming of movies, TV shows, and music, and other perks</li>
+                                <li><b>Amazon Web Services (AWS):</b> a cloud computing platform that provides a range
+                                    of services, including storage, computing, and networking</li>
+                                <li><b>Amazon Music/Video:</b> a streaming service for music, movies and TV shows</li>
+                                <li><b>Amazon Fresh:</b> a grocery delivery and pickup service</li>
+                                <li><b>Amazon Pharmacy:</b> an online pharmacy</li>
+                                <li><b>Amazon Devices:</b> a range of devices such as the Echo, Kindle, and Fire TV</li>
+                                <li><b>Amazon Fashion:</b> a retail site for clothing and accessories</li>
+                                <li><b>Amazon Home Services: </b>a platform that connects customers with service
+                                    professionals for various home services</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <div id="CCMB_app" class="app">
